@@ -5,7 +5,7 @@
 	<key>CFBundleName</key>
 	<string>Zwift World Selector</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.activeworksconsulting.zwift-world-selector</string>
+	<string>com.richlinnell.zwift-world-selector</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
