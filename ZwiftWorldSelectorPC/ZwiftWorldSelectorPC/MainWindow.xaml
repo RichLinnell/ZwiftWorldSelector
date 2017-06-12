@@ -1,0 +1,35 @@
+﻿<Window x:Class="ZwiftWorldSelectorPC.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZwiftWorldSelectorPC"
+        mc:Ignorable="d"
+        Title="Zwift World Selector" Height="200" Width="557">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320*"></ColumnDefinition>
+            <ColumnDefinition Width="147*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Content="Change my Zwift location to" IsEnabled="False" Height="26" Margin="0,29"/>
+        <StackPanel VerticalAlignment="Center" Grid.Row="0" Grid.Column="1">
+            <ComboBox x:Name="SelectedWorld" Grid.Row="0" Grid.Column="1" Margin="0,0,5,0">
+                <ComboBoxItem IsSelected="True" Tag="0">Current Schedule</ComboBoxItem>
+                <ComboBoxItem Tag="1">Watopia</ComboBoxItem>
+                <ComboBoxItem Tag="2">Richmond</ComboBoxItem>
+                <ComboBoxItem Tag="3">London</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Height="44" Margin="0,21,0,20">
+            <TextBlock xml:space="preserve" TextWrapping="Wrap"  Name="FileMissing" Foreground="Red" Margin="5,0,0,0" Visibility="Hidden">Cannot find Zwift prefs.xml file in Documents/Zwift folder.
+Is Zwift installed?</TextBlock>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Center" Grid.Row="1" Grid.Column="1">
+            <Button Name="Save" Width="100" Click="Save_Click">Save and Close</Button>
+        </StackPanel>
+    </Grid>
+</Window>
