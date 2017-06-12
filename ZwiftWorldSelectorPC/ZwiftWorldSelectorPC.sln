@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZwiftWorldSelectorPC", "ZwiftWorldSelectorPC\ZwiftWorldSelectorPC.csproj", "{44A58509-F4CD-4EEE-86D8-486D01D97088}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ZwiftWorldSelectorInstaller", "ZwiftWorldSelectorInstaller\ZwiftWorldSelectorInstaller.vdproj", "{4E8152FA-9D22-4A31-8247-3B58D4DE69A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,8 @@ Global
 		{44A58509-F4CD-4EEE-86D8-486D01D97088}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44A58509-F4CD-4EEE-86D8-486D01D97088}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44A58509-F4CD-4EEE-86D8-486D01D97088}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E8152FA-9D22-4A31-8247-3B58D4DE69A0}.Debug|Any CPU.ActiveCfg = Debug
+		{4E8152FA-9D22-4A31-8247-3B58D4DE69A0}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
