@@ -9,7 +9,7 @@ If you encounter any issues please feel free to drop them in the Issues section 
 Select the latest version from the Distributions folder, download the package and install.
 
 The latest PC Version is here [Release 1.0](https://github.com/RichLinnell/ZwiftWorldSelector/tree/master/Distributions/PC%20Version%201.0.0)
-The latest Mac Version is here [Release 1.0](https://github.com/RichLinnell/ZwiftWorldSelector/blob/master/Distributions/Version%201.0.0/Zwift%20World%20Selector-1.0.pkg)
+The latest Mac Version is here [Release 1.0](https://github.com/RichLinnell/ZwiftWorldSelector/tree/master/Distributions/Version%201.0.0)
 
 * Please note - I am fighting a little at the moment with the signing of the Mac version, so you may receive warnings about unidentified developer for this app,  please see the following link for a temporary workaround until I get a chance to fix this. Ensure you change this setting back once you have it all running.
 
