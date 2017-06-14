@@ -10,15 +10,18 @@ namespace ZwiftWorldSelector
 {
     public partial class ViewController : NSViewController
     {
+        private readonly string _filePath;
         public ViewController(IntPtr handle) : base(handle)
         {
-        }
+			var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+			_filePath = Path.Combine(documentsPath, "Documents/Zwift/prefs.xml");
+}
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-
             Save.Activated += (sender, e) => SaveSelection();
+            LoadExistingSettings();
         }
 
         public override NSObject RepresentedObject
@@ -34,16 +37,10 @@ namespace ZwiftWorldSelector
             }
         }
 
-        public void SaveSelection(){
-			var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-			var filePath = Path.Combine(documentsPath, "Documents/Zwift/prefs.xml");
-            if (!File.Exists(filePath)){
-                FileMissing.Hidden = false;
-                return;
-            }
-            FileMissing.Hidden = true;
-            var xmlDoc = XDocument.Load(filePath);
-            var root = xmlDoc.Descendants().First();
+        private void SaveSelection()
+        {
+            var xmlDoc = LoadPrefsFile();
+			var root = xmlDoc.Descendants().First();
             if(!root.Descendants("WORLD").Any()){
                 XElement worldNode = new XElement("WORLD", "1");
                 root.Add(worldNode);
@@ -53,8 +50,37 @@ namespace ZwiftWorldSelector
                 root.Descendants("WORLD").Remove();
             }
 
-            xmlDoc.Save(filePath);
+            xmlDoc.Save(_filePath);
             NSApplication.SharedApplication.Terminate(this);
         }
+
+        private XDocument LoadPrefsFile()
+        {
+			
+            if (!File.Exists(_filePath))
+			{
+				FileMissing.Hidden = false;
+				return null;
+			}
+			FileMissing.Hidden = true;
+			return XDocument.Load(_filePath);
+		}
+
+        private void LoadExistingSettings()
+        {
+            var xmlDoc = LoadPrefsFile();
+			var root = xmlDoc.Descendants().First();
+            if (root.Descendants("WORLD").Any())
+            {
+                var selectedVal = root.Descendants("WORLD").Single().Value;
+                nint valAsInt;
+                if (nint.TryParse(selectedVal, out valAsInt))
+                {
+                    var listItem = SelectedWorld.Items().SingleOrDefault(i => i.Tag == valAsInt);
+                    SelectedWorld.SelectItem(listItem);
+                }
+            }
+        }
+			
     }
 }
