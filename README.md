@@ -10,4 +10,4 @@ Select the latest version from the Distributions folder, download the package an
 
 The latest PC Version is here [Release 1.0](https://github.com/RichLinnell/ZwiftWorldSelector/tree/master/Distributions/PC%20Version%201.0.0)
 
-The latest Mac Version is here [Release 1.0.1](https://github.com/RichLinnell/ZwiftWorldSelector/tree/master/Distributions/Mac)
+The latest Mac Version is here [Release 1.0.2](https://github.com/RichLinnell/ZwiftWorldSelector/tree/master/Distributions/Mac)
